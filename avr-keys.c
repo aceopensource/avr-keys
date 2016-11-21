@@ -5,7 +5,9 @@
 
 #include "avr-keys.h"
 
+#ifndef FLASH_DATA_EXTERN
 const uint8_t flash_data[FLASH_DATA_SIZE] PROGMEM __attribute__((used)) = {0x00};
+#endif // FLASH_DATA_EXTERN
 
 void flash_format()
 {
