@@ -8,24 +8,10 @@
 
 #include <avr/pgmspace.h>
 #include <stdint.h>
+#include <stdbool.h>
 #include "eeprom.h"
 #include "flash.h"
-
-#ifndef KEY_DEBUG
-#define KEY_DEBUG 0
-#endif // KEY_DEBUG
-
-#ifndef KEY_MAX_LEN
-#define KEY_MAX_LEN 10
-#endif // KEY_MAX_LEN
-
-#ifndef FLASH_NUM_KEYS
-#define FLASH_NUM_KEYS 10
-#endif // FLASH_NUM_KEYS
-
-#ifndef EEPROM_NUM_KEYS
-#define EEPROM_NUM_KEYS 10
-#endif // EEPROM_NUM_KEYS
+#include "avr-keys-settings.h"
 
 #ifndef NUM_KEYS
 #define NUM_KEYS (FLASH_NUM_KEYS+EEPROM_NUM_KEYS)

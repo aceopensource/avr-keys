@@ -35,14 +35,14 @@ uint8_t key_check(uint8_t * buf, uint16_t * index_out)
 	uint8_t cmp_buf[KEY_MAX_LEN];
 	uint8_t match_flag;
 	// Start with eeprom
-//	printf("key max index: %d\n", key_max_index());
+	printf("key max index: %d\n", key_max_index());
 	for (uint16_t index = 0; index <= key_max_index(); index++)
 	{
 		match_flag = 1;
 		key_get(index, cmp_buf);
 		for (uint8_t key_index = 0; key_index < KEY_MAX_LEN; key_index++)
 		{
-//			printf("Comparing [0x%02X] and [0x%02X]\n", cmp_buf[key_index], buf[key_index]);
+			printf("Comparing [0x%02X] and [0x%02X]\n", cmp_buf[key_index], buf[key_index]);
 			if (cmp_buf[key_index] != buf[key_index])
 			{
 				match_flag = 0;
