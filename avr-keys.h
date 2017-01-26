@@ -34,7 +34,7 @@ extern const uint8_t flash_data[FLASH_DATA_SIZE] PROGMEM;
 #endif // FLASH_DATA_ADDRESS
 
 #ifndef EEPROM_ADDR_START
-#define EEPROM_ADDR_START ((uint8_t*)(E2END-(EEPROM_DATA_SIZE*KEY_MAX_LEN)))
+#define EEPROM_ADDR_START ((uint8_t*)(E2END-(EEPROM_DATA_SIZE)))
 #endif // EEPROM_ADDR_START
 
 #ifndef EEPROM_ADDR_END

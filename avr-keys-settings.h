@@ -1,5 +1,5 @@
 /**
- * AVR KEY METHODS
+ * AVR KEY SETTINGS
  * Christopher Bero <berocs@acedb.co>
  */
 
@@ -8,10 +8,10 @@
 
 #define KEY_DEBUG 0
 
-#define KEY_MAX_LEN 10
+#define KEY_MAX_LEN 20
 
-#define FLASH_NUM_KEYS 10
+#define FLASH_NUM_KEYS 500
 
-#define EEPROM_NUM_KEYS 10
+#define EEPROM_NUM_KEYS 20
 
 #endif // AVR_KEYS_SETTINGS_H
