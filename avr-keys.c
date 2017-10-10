@@ -187,7 +187,9 @@ uint8_t key_remove(uint16_t key_index)
 	else if (key_index <= key_max_index())
 	{
 		// clear from flash
+//		printf("before: 0x%02X, ", key_index);
 		key_index -= top_eeprom_index;
+//		printf("flash key index: 0x%02X\n", key_index);
 		flash_put_bytes(FLASH_ADDR_START + (key_index*KEY_MAX_LEN), empty_space, KEY_MAX_LEN);
 //		flash_get_bytes(FLASH_ADDR_START + (key_index*KEY_MAX_LEN), empty_space, KEY_MAX_LEN);
 //		for (uint8_t index = 0; index < KEY_MAX_LEN; index++)

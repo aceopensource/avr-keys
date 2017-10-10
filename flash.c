@@ -6,12 +6,11 @@
 #include "flash.h"
 
 // Function pointers to bootloader
-void (*bootloader_func)(void) = (void*)0x7e00;
-//void (*bootloader_putch)(char ch) = (void*)0x7f6a;
-void (*bootloader_putch)(char ch) = (void*)0x3fb5;
-uint8_t (*bootloader_read_mem)(uint8_t memtype, uint16_t address, pagelen_t length) = (void*)0x3fea;
+void (*bootloader_func)(void) = (void*)0x3f00;
+void (*bootloader_putch)(char ch) = (void*)0x3f8a;
+uint8_t (*bootloader_read_mem)(uint8_t memtype, uint16_t address, pagelen_t length) = (void*)0x3fe9;
 void (*bootloader_writebuffer)(int8_t memtype, uint8_t *mybuff, uint16_t address, pagelen_t len) = (void*)0x3fba;
-uint8_t (*bootloader_getch)(void) = (void*)0x7f78;
+uint8_t (*bootloader_getch)(void) = (void*)0x3f91;
 
 void flash_get_byte(uint16_t addr, uint8_t * byte)
 {
@@ -24,7 +23,7 @@ void flash_get_byte(uint16_t addr, uint8_t * byte)
 
 void flash_get_bytes(uint16_t addr, uint8_t * buf, uint8_t len)
 {
-//	printf("Flash address: 0x%02X, len: %d\n", addr, len);
+//	printf("Flash get byte address: 0x%02X, len: %d\n", addr, len);
 	for (uint8_t index = 0; index < len; index++)
 	{
 		flash_get_byte(addr+index, &buf[index]);
